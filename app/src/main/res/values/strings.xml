@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PracticeProject</string>
+    <string name="room">ROOM</string>
+    <string name="todolistandasync">todoListAndAsync</string>
+    <string name="recyclerview">RecyclerViewAndSnapHelp</string>
+    <string name="title_activity_view_page2">ViewPage2Activity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="viewpage2">ViewPage2WithFragment</string>
+</resources>
