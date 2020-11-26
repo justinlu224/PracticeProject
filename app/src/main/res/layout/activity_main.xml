@@ -42,6 +42,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"/>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnPracticeLib"
+        android:text="@string/practiceLib"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnViewPage2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
     <TextView
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

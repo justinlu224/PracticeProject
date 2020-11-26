@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
 import android.view.View
+import com.example.practiceibrary.PracticeLibActivity
 import com.example.practiceproject.databinding.ActivityMainBinding
 import com.example.practiceproject.databinding.MainAdapterBinding
 import com.example.practiceproject.recyclerviewsnaphelper.RecyclerViewActivity
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             btnTodo.setOnClickListener(this@MainActivity)
             btnRecyclerview.setOnClickListener(this@MainActivity)
             btnViewPage2.setOnClickListener(this@MainActivity)
+            btnPracticeLib.setOnClickListener(this@MainActivity)
         }
 
         object : CountDownTimer(3000,1000){
@@ -58,6 +60,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btnTodo -> nextPage(CoroutinesAsyncActivity::class.java)
             R.id.btnRecyclerview -> nextPage(RecyclerViewActivity::class.java)
             R.id.btnViewPage2 -> nextPage(ViewPage2Activity::class.java)
+            R.id.btnPracticeLib -> nextPage(PracticeLibActivity::class.java)
         }
     }
 

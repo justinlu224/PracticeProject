@@ -7,4 +7,5 @@
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="viewpage2">ViewPage2WithFragment</string>
+    <string name="practiceLib">PracticeLib</string>
 </resources>
