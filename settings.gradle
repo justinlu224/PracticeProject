@@ -1,3 +1,4 @@
+include ':AndroidXTest'
 include ':Practiceibrary'
 include ':app'
 rootProject.name = "PracticeProject"

@@ -6,9 +6,12 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
 import android.view.View
+import androidx.lifecycle.lifecycleScope
 import com.example.practiceibrary.PracticeLibActivity
+import com.example.practiceproject.api.RetrofitManager
 import com.example.practiceproject.databinding.ActivityMainBinding
 import com.example.practiceproject.databinding.MainAdapterBinding
+import com.example.practiceproject.demo.DemoActivity
 import com.example.practiceproject.recyclerviewsnaphelper.RecyclerViewActivity
 import com.example.practiceproject.room.RoomActivity
 import com.example.practiceproject.todoasync.CoroutinesAsyncActivity
@@ -35,6 +38,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             btnRecyclerview.setOnClickListener(this@MainActivity)
             btnViewPage2.setOnClickListener(this@MainActivity)
             btnPracticeLib.setOnClickListener(this@MainActivity)
+            btnDemo.setOnClickListener(this@MainActivity)
         }
 
         object : CountDownTimer(3000,1000){
@@ -47,6 +51,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
 
         }.start()
+
+
+        lifecycleScope.launchWhenResumed {
+            val uBikeData = RetrofitManager.apiService.getUBikeInfo()
+        }
+
     }
 
     override fun onDestroy() {
@@ -61,6 +71,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btnRecyclerview -> nextPage(RecyclerViewActivity::class.java)
             R.id.btnViewPage2 -> nextPage(ViewPage2Activity::class.java)
             R.id.btnPracticeLib -> nextPage(PracticeLibActivity::class.java)
+            R.id.btnDemo -> nextPage(DemoActivity::class.java)
         }
     }
 

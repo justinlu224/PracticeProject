@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.practiceproject.TestApplication
+import com.example.practiceproject.PracticeApplication
 import com.example.practiceproject.databinding.ActivityRoomBinding
 import com.example.practiceproject.databinding.ItemRoomBinding
 import kotlinx.coroutines.Dispatchers
@@ -45,7 +45,7 @@ class RoomActivity : AppCompatActivity(), onItemClick {
             buttonCreate.onClick {
                 Log.i(
                     TAG, "onCreate: ${
-                        TestApplication.dataBase.getStudentDao().insertStudentData(
+                        PracticeApplication.dataBase.getStudentDao().insertStudentData(
                             Student(
                                 null,
                                 editTextName.text.toString(),
@@ -54,20 +54,20 @@ class RoomActivity : AppCompatActivity(), onItemClick {
                                 editTextElse.text.toString()
                             )
                         )
-                    }, ${TestApplication.dataBase.getSecondDao().insertSecondData(Second(editTest.text.toString()))}"
+                    }, ${PracticeApplication.dataBase.getSecondDao().insertSecondData(Second(editTest.text.toString()))}"
                 )
-                adapter.second = TestApplication.dataBase.getSecondDao().getAll()
-                adapter.students = TestApplication.dataBase.getStudentDao().getAll()
+                adapter.second = PracticeApplication.dataBase.getSecondDao().getAll()
+                adapter.students = PracticeApplication.dataBase.getStudentDao().getAll()
             }
             buttonModify.onClick {
-                Log.i(TAG, "onCreate: ${TestApplication.dataBase.getStudentDao().updateData(Student(
+                Log.i(TAG, "onCreate: ${PracticeApplication.dataBase.getStudentDao().updateData(Student(
                     student?.id,
                     editTextName.text.toString(),
                     editTextPhone.text.toString(),
                     editTextHobby.text.toString(),
                     editTextElse.text.toString()
                 ))}")
-                adapter.students = TestApplication.dataBase.getStudentDao().getAll()
+                adapter.students = PracticeApplication.dataBase.getStudentDao().getAll()
             }
             buttonClear.onClick {
                 with(binding) {
@@ -83,8 +83,8 @@ class RoomActivity : AppCompatActivity(), onItemClick {
 
 
         MainScope().launch {
-            adapter.second = TestApplication.dataBase.getSecondDao().getAll()
-            adapter.students = TestApplication.dataBase.getStudentDao().getAll()
+            adapter.second = PracticeApplication.dataBase.getSecondDao().getAll()
+            adapter.students = PracticeApplication.dataBase.getStudentDao().getAll()
             Log.i(TAG, "onCreate: ${adapter.students}")
         }
     }
@@ -111,9 +111,9 @@ class RoomActivity : AppCompatActivity(), onItemClick {
         lifecycleScope.launch(Dispatchers.Main) {
             adapter.students = withContext(Dispatchers.IO) {
                 adapter.students?.get(position)?.id?.run {
-                    TestApplication.dataBase.getStudentDao().deleteDataId(this)
+                    PracticeApplication.dataBase.getStudentDao().deleteDataId(this)
                 }
-                TestApplication.dataBase.getStudentDao().getAll()
+                PracticeApplication.dataBase.getStudentDao().getAll()
             }
         }
     }

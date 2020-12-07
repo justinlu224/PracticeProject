@@ -17,13 +17,13 @@ import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.practiceproject.R
-import com.example.practiceproject.TestApplication
+import com.example.practiceproject.PracticeApplication
 import com.example.practiceproject.databinding.ItemImageBinding
 import com.example.practiceproject.databinding.RecyclerViewFragmentBinding
 
 fun Context.getDrawableCom(res: Int):Drawable {
 
-   var drawable = ContextCompat.getDrawable(TestApplication.instance, res)!!
+   var drawable = ContextCompat.getDrawable(PracticeApplication.instance, res)!!
     val rect = Rect(0, 0, drawable?.intrinsicHeight ?: 0, drawable?.intrinsicWidth ?: 0)
     drawable?.bounds = rect
     return drawable
@@ -33,16 +33,16 @@ fun Context.getDrawableCom(res: Int):Drawable {
 class RecyclerViewFragment : Fragment() , MyAdapter.RecyclerviewFragmentListener {
 
     val imageList = listOf(
-        TestApplication.instance.getDrawableCom(R.drawable.images),
-        TestApplication.instance.getDrawableCom(R.drawable.images1),
-        TestApplication.instance.getDrawableCom(R.drawable.images2),
-        TestApplication.instance.getDrawableCom(R.drawable.images3),
-        TestApplication.instance.getDrawableCom(R.drawable.images4),
-        TestApplication.instance.getDrawableCom(R.drawable.images5),
-        TestApplication.instance.getDrawableCom(R.drawable.images6),
-        TestApplication.instance.getDrawableCom(R.drawable.images7),
-        TestApplication.instance.getDrawableCom(R.drawable.images8),
-        TestApplication.instance.getDrawableCom(R.drawable.images9)
+        PracticeApplication.instance.getDrawableCom(R.drawable.images),
+        PracticeApplication.instance.getDrawableCom(R.drawable.images1),
+        PracticeApplication.instance.getDrawableCom(R.drawable.images2),
+        PracticeApplication.instance.getDrawableCom(R.drawable.images3),
+        PracticeApplication.instance.getDrawableCom(R.drawable.images4),
+        PracticeApplication.instance.getDrawableCom(R.drawable.images5),
+        PracticeApplication.instance.getDrawableCom(R.drawable.images6),
+        PracticeApplication.instance.getDrawableCom(R.drawable.images7),
+        PracticeApplication.instance.getDrawableCom(R.drawable.images8),
+        PracticeApplication.instance.getDrawableCom(R.drawable.images9)
     )
     private var _binding: RecyclerViewFragmentBinding? = null
     val binding get() = _binding!!

@@ -7,12 +7,14 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.practiceproject.room.DB_NAME
 import com.example.practiceproject.room.DataBase
 
-class TestApplication:Application() {
+class PracticeApplication:Application() {
 
 
     companion object{
-        lateinit var instance:TestApplication
+        lateinit var instance:PracticeApplication
         lateinit var dataBase: DataBase
+        val MEDIA_TYPE = "application/json; charset=utf-8"
+        val URL = "https://data.ntpc.gov.tw"
 
 
         //資料表刪除elseInfo欄位

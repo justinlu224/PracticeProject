@@ -8,4 +8,6 @@
     <string name="tab_text_2">Tab 2</string>
     <string name="viewpage2">ViewPage2WithFragment</string>
     <string name="practiceLib">PracticeLib</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_network">網路不穩或未連上網路，請再試一次</string>
 </resources>
