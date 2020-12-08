@@ -1,4 +1,3 @@
-include ':XTest'
 include ':Practiceibrary'
 include ':app'
 rootProject.name = "PracticeProject"
