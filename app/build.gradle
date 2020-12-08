@@ -101,5 +101,4 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.1'
 
     implementation project(path: ':Practiceibrary')
-    implementation project(path: ':AndroidXTest')
 }
