@@ -40,10 +40,10 @@ class DemoActivity : BaseActivity<DemoViewModel>() {
         setContentView(binding.root)
 
 
-        with(binding) {
-            recyclerView.layoutManager = LinearLayoutManager(this@DemoActivity)
-            recyclerView.adapter = demoAdapter
-        }
+//        with(binding) {
+//            recyclerView.layoutManager = LinearLayoutManager(this@DemoActivity)
+//            recyclerView.adapter = demoAdapter
+//        }
 
 
         aViewModel.ubickDatas.observe(this, Observer {
@@ -91,6 +91,8 @@ class DemoViewHolder(val binding: ItemDemoBinding) : RecyclerView.ViewHolder(bin
 
 
 class DemoViewModel : BaseViewModel() {
+
+    val title = MutableLiveData<String>()
 
     val ubickDatas = MutableLiveData<List<UBikeData>>()
 
